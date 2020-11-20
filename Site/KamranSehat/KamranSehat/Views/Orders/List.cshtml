@@ -1,0 +1,103 @@
+﻿@model ViewModels.OrderListViewModel
+@{
+    ViewBag.Title = "لیست سفارشات";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title">
+    <div class="bg-section">
+        <img src="/assets/images/page-title/title-22.jpg" alt="Background" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title title-2 text-center">
+                    <div class="title--content">
+                        <div class="title--heading">
+                            <h1>لیست سفارشات</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="portfolio portfolio-single bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="cart-table table-responsive">
+                    @if (Model.HasOrder)
+                    {
+                        
+                        <table class="table table-bordered">
+
+                            <thead>
+                                <tr class="cart-product">
+                                    <th class="cart-product-item">تاریخ سفارش</th>
+                                    <th class="cart-product-item">کد سفارش</th>
+                                    <th class="cart-product-item">وضعیت سفارش</th>
+                                    <th class="cart-product-item">جمع کل سفارش</th>
+                                    <th class="cart-product-price">مشاهده</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @foreach (var order in Model.Orders)
+                                {
+                                    <tr class="cart-product">
+                                        <td class="cart-product-item">
+                                            <div class="cart-product-name">
+                                                <h6>@order.OrderDate</h6>
+                                            </div>
+                                        </td>
+                                        
+                                        <td class="cart-product-item">
+                                            <div class="cart-product-name">
+                                                <h6>@order.Code</h6>
+                                            </div>
+                                        </td>
+                                        
+
+                                        <td class="cart-product-item">
+                                            <div class="cart-product-name">
+                                                <h6>@order.Status</h6>
+                                            </div>
+                                        </td>
+                                        
+                                        <td class="cart-product-item">
+                                            <div class="cart-product-name">
+                                                <h6>@order.Total</h6>
+                                            </div>
+                                        </td>
+                                        <td class="cart-product-price"><a href="/orders/details/@order.Code">مشاهده</a></td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {<div class="col-xs-12 col-sm-12 col-md-6 col-md-push-3">
+                        <div class="cart-shiping">
+                            <p class="heading-color mb--30 text-center alert alert-danger">
+                                کاربر گرامی، سفارشی برای نام کاربری شما به ثبت نرسیده است. 
+                            </p>
+                            <div class="panel-body text-right">
+                                <p>
+                               </p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+                <!-- .cart-table end -->
+            </div>
+
+        </div>
+    </div>
+</section>
+

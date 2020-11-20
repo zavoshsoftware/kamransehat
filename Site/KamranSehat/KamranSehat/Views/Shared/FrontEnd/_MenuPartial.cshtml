@@ -1,0 +1,59 @@
+﻿@model ViewModels.BaseViewModel
+
+<li id="homeLi" class="menuitem"><a href="/" class="menu-item">خانه</a></li>
+<li id="proLi" class="menuitem"><a href="/product/video" class="menu-item">ویدیو های آموزشی</a></li>
+<li id="blogLi" class="menuitem"><a href="/questions/create" class="menu-item">مشاوره آنلاین</a></li>
+
+<li class="has-dropdown mega-dropdown menuitem" id="serviceLi">
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle menu-item">خدمات</a>
+    <ul class="dropdown-menu mega-dropdown-menu">
+        <li>
+            <div class="container">
+                <div class="row">
+                    @foreach (var group in Model.MenuServiceGroups)
+                    {
+                        <div class="col-md-3">
+                            <a href="/service/@group.ServiceGroup.Name">@group.ServiceGroup.Title</a>
+                            <ul>
+                                @foreach (var service in group.Services)
+                                {
+                                    <li><a href="/service/@group.ServiceGroup.Name/@service.Name">@service.Title</a></li>
+                                }
+                            </ul>
+                        </div>
+                    }
+									
+	                <div class="col-md-3">
+		                <a href="/">اجرا</a>
+		                <ul>
+				                <li><a href="/websiteservice/طراحی-سایت-شرکتی">طراحی سایت شرکتی</a></li>
+				                <li><a href="/websiteservice/طراحی-فروشگاه-اینترنتی">طراحی فروشگاه اینترنتی</a></li>
+		                </ul>
+	                </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</li>
+
+<li id="radioLi" class="menuitem"><a href="/radio" class="menu-item">رادیو</a></li>
+@*<li id="bookLi" class="menuitem"><a href="/book" class="menu-item">کتاب</a></li>*@
+<li id="blogLi" class="menuitem"><a href="/blog/all" class="menu-item">وبلاگ</a></li>
+
+@*<li id="custLi" class="menuitem"><a href="/customer" class="menu-item">مشتریان</a></li>*@
+<li><a href="/consult-request" class="menu-item">درخواست مشاوره</a></li>
+<li class="has-dropdown">
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle menu-item">حساب کاربری</a>
+    <ul class="dropdown-menu">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li><a href="/orders/list">لیست سفارشات</a></li>
+            <li><a href="/account/LogOff">خروچ</a></li>
+        }
+        else
+        {
+            <li><a href="/account/login">ورود</a></li>
+            <li><a href="/account/register">ثبت نام</a></li>
+        }
+    </ul>
+</li>

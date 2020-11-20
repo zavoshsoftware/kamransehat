@@ -1,0 +1,90 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html class="no-js" lang="fa">
+<head>
+    <title>@ViewBag.Title | دکتر کامران صحت</title>
+    <meta name="description" content="@ViewBag.Description">
+    <link rel="canonical" href="@ViewBag.Canonical" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/images/favicon.png" rel="icon">
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch.png">
+    <link href='http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CDroid+Serif:400,400i,700,700i' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/external.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="/assets/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css">
+    <link href="~/assets/css/style-rtl.css" rel="stylesheet" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:type" content="@ViewBag.ogType" />
+    <meta property="og:url" content="@ViewBag.Canonical" />
+    <meta property="og:image" content="@ViewBag.ogImage" />
+    <meta property="og:description" content="@ViewBag.Description" />
+    <meta property="og:site_name" content="@ViewBag.ogSitename" />
+    @RenderSection("HeadSection", required: false)
+    @RenderSection("StructuredData", required: false)
+    <meta name="google-site-verification" content="PSQrXbZX3QN9zJoTbtvk4MFq4m9mTHuCaG81X844gQs" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151360331-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-151360331-1');
+    </script>
+</head>
+<body>
+    <div id="wrapper" class="wrapper clearfix">
+        <header id="navbar-spy" class="header header-1 header-transparent header-fixed">
+            <nav id="primary-menu" class="navbar  navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="logo" href="/">
+                            <img class="logo-light" src="/assets/images/logo/logo-light2.png" alt="Whole logo">
+                            <img class="logo-dark" src="/assets/images/logo/logo-dark2.png" alt="Whole logo">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-left">
+                            @Html.Partial("FrontEnd/_MenuPartial")
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        @RenderBody()
+        @Html.Partial("FrontEnd/_FooterPartial")
+    </div>
+    <script src="/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/functions.js"></script>
+    <!-- RS5.0 Core JS Files -->
+    <script type="text/javascript" src="/assets/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="/assets/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <!-- RS Configration JS Files -->
+    <script src="/assets/js/rsconfig.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    @RenderSection("scripts", required: false)
+ 
+</body>
+</html>

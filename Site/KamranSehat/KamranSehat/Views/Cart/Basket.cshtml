@@ -1,0 +1,216 @@
+﻿@model ViewModels.BasketViewModel
+
+@{
+    ViewBag.Title = "سبد خرید";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+<section id="page-title" class="page-title page-title2">
+    <div class="container-fluid bg-overlay bg-overlay-dark">
+        <div class="bg-section">
+            <img src="/assets/images/page-title/title-22.jpg" alt="کامران صحت" />
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title title-8 text-center">
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            @*<li><a href="/">خانه</a></li>
+                                <li class="active">محصولات</li>*@
+                        </ol>
+                        <div class="title--heading">
+                            <h1>سبد خرید</h1>
+                        </div>
+                        <div class="title--desc">
+                            @*<p>در این بخش از وب سایت می توانید تمامی محصولات آموزشی دکتر کامران صحت را مشاهده نمایید.</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="shopcart" class="shop shop-cart bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="cart-table table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="cart-product">
+                                <th class="cart-product-item">عنوان محصول</th>
+                                <th class="cart-product-price">قیمت</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in Model.Products)
+                            {
+                                <tr class="cart-product">
+                                    <td class="cart-product-item">
+                                        <div class="cart-product-remove" onclick="removeFromBasket('@product.Code')">
+                                            <i class="fa fa-close"></i>
+                                        </div>
+                                        <div class="cart-product-img">
+                                            <img src="@product.ImageUrl" alt="@product.Title" />
+                                        </div>
+                                        <div class="cart-product-name">
+                                            <h6>@product.Title</h6>
+                                        </div>
+                                    </td>
+                                    <td class="cart-product-price">@product.AmountStr</td>
+                                </tr>
+                            }
+
+
+                            <tr class="cart-product-action">
+                                <td colspan="4">
+                                    @*<div class="row clearfix">
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="form-inline">
+                                                <input type="text" class="form-control" id="coupon" placeholder="کد تخفیف" />
+                                                <button type="button" onclick="addDiscountCode();" class="btn btn--primary">اعمال کد تخفیف</button>
+                                            </div>
+                                        </div> 
+                                        <div class="col-xs-12 col-sm-6 col-md-6 text-left">
+                                            <a class="btn btn--secondary" href="/product/all">خرید محصولات بیشتر</a>
+                                        </div>
+                                    </div>*@
+                                    <div class="row finalize-shopping-alert">
+                                        <p class="alert alert-info">کاربر گرامی جهت نهایی کردن خرید و پرداخت مبلغ سفارش فرم زیر را تکمیل نمایید</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- .cart-table end -->
+            </div>
+            <div class="col-xs-12 col-sm-12  col-md-6 mb-30-xs mb-30-sm">
+                <div class="cart-shiping">
+
+                    <section id="tabs1" class="tabs bg-white">
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#Register" data-toggle="tab">برای خرید اطلاعات زیر را تکمیل نمایید.</a>
+                                    </li>
+
+
+                                </ul>
+                                <div class="row">
+                                    <div class="alert alert-success text-center" id="SuccessDivC">سفارش شما با موفقیت ثبت گردید</div>
+                                    <div class="alert alert-danger text-center" id="errorDivC"></div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="Register">
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" id="txtFullname" placeholder="نام و نام خانوادگی">
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" id="txtMobile" placeholder="شماره موبایل">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <img src="~/Images/loading.gif" id="loading-img" />
+                                                <input type="button" class="btn btn--primary" value="تکمیل خرید" id="btnCreateOtp" onclick="FirstOrder();"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="tab-pane fade in " id="activate">
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p class="alert alert-info">به شماره موبایل وارد شده یک کد فعال سازی ارسال شد <a onclick="changeMobile();">تغییر شماره موبایل</a> </p>
+                                                <input type="text" class="form-control" id="txtactivatecode" placeholder="کد فعال سازی را اینجا وارد کنید">
+                                            </div>
+                                        </div>
+                                         
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="button" class="btn btn--primary" value="پرداخت مبلغ سفارش" onclick=" InsertOrder();" />
+                                        
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12  col-md-6">
+                <div class="cart-total-amount">
+                    <h6>جمع خرید:</h6>
+                    <ul class="list-unstyled">
+                        <li>جمع مبلغ خرید :<span class="pull-right text-right">@Model.SubTotal</span></li>
+                        <li>تخفیف :<span class="pull-right text-right">@Model.DiscountAmount</span></li>
+                        <li>مبلغ قابل پرداخت :<span class="pull-right text-right">@Model.Total.ToString("N0") تومان</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section scripts{
+    <script>
+        function addDiscountCode() {
+            var coupon = $("#coupon").val();
+            $('#errorDiv').css('display', 'none');
+            if (coupon !== "") {
+                $.ajax(
+                    {
+                        url: "/Cart/DiscountRequestPost",
+                        data: { coupon: coupon },
+                        type: "GET"
+                    }).done(function (result) {
+                        if (result !== "Invald" && result !== "Used" && result !== "Expired") {
+                            location.reload();
+                        }
+                        else if (result !== true) {
+                            $('#errorDiv').css('display', 'block');
+                            if (result.toLowerCase() === "used") {
+                                $('#errorDiv').html("این کد تخفیف قبلا استفاده شده است.");
+                            }
+                            else if (result.toLowerCase() === "expired") {
+                                $('#errorDiv').html("کد تخفیف وارد شده منقضی شده است.");
+                            }
+                            else if (result.toLowerCase() === "invald") {
+                                $('#errorDiv').html("کد تخفیف وارد شده معتبر نمی باشد.");
+                            }
+                            else if (result.toLowerCase() === "true") {
+                                $('#SuccessDiv').css('display', 'block');
+                                $('#errorDiv').css('display', 'none');
+                            }
+                        }
+                    });
+
+            } else {
+                $('#SuccessDiv').css('display', 'none');
+                $('#errorDiv').html('کد تخفیف را وارد نمایید.');
+                $('#errorDiv').css('display', 'block');
+            }
+        }
+    </script>
+}

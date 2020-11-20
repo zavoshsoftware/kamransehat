@@ -1,0 +1,86 @@
+﻿
+@model ViewModels.RegisterViewModel
+
+@{
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title page-title2">
+    <div class="container-fluid bg-overlay bg-overlay-dark">
+        <div class="bg-section">
+            <img src="/assets/images/page-title/title-22.jpg" alt="کامران صحت" />
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title title-8 text-center">
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            @*<li><a href="/">خانه</a></li>
+                                <li class="active">محصولات</li>*@
+                        </ol>
+                        <div class="title--heading">
+                            <h1>ثبت نام در وب سایت</h1>
+                        </div>
+                        <div class="title--desc">
+                            @*<p>در این بخش از وب سایت می توانید تمامی محصولات آموزشی دکتر کامران صحت را مشاهده نمایید.</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id="login-page" class="shop shop-cart bg-white">
+    <div class="container">
+
+
+     
+
+        @using (Html.BeginForm("Register", "Account",FormMethod.Post, new { @class = "panel-body wrapper-lg", role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(false, "", new { @class = "alert-danger" })
+
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        @Html.LabelFor(model => model.FullName, new {@class = "control-label"})
+                        @Html.TextBoxFor(m => m.FullName, new {@class = "form-control input-lg", @placeholder = Html.DisplayNameFor(model => model.FullName) })
+                    </div>
+                </div>
+   <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        @Html.LabelFor(model => model.CellNumber, new {@class = "control-label"})
+                        @Html.TextBoxFor(m => m.CellNumber, new {@class = "form-control input-lg", @placeholder = Html.DisplayNameFor(model => model.CellNumber) })
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = Html.DisplayNameFor(model => model.Email) })
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary ">ثبت نام</button>
+                        </div>
+                        <div class="col-md-6 text-left">
+                            اگر قبلا ثبت نام کرده اید وارد وب سایت شوید
+                            <a href="/account/login">ورود به وب سایت</a>
+                        </div>
+                    </div>
+                   
+                    </div>
+
+
+        }
+
+    </div>
+</section>

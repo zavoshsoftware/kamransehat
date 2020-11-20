@@ -1,0 +1,63 @@
+﻿@model ViewModels.BlogListViewModel
+@{
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title bg-overlay bg-overlay-dark">
+    <div class="bg-section">
+        <img src="/assets/images/page-title/title-22.jpg" alt="Background" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                <div class="title title-8 text-center">
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            <li><a href="/">خانه</a></li>
+                            <li class="active">@Model.BlogGroupTitle</li>
+                        </ol>
+                        <div class="title--heading">
+                            <h1>@Model.BlogGroupTitle</h1>
+                        </div>
+                        <div class="title--desc">
+                            <p>@Model.BlogGroupSummery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="blog" class="blog blog-grid">
+    <div class="container">
+        <div class="row">
+        <!-- Blog Entry #1 -->
+        
+        @foreach (var blog in Model.Blogs)
+        {
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="blog-entry blog-detail">
+                    <div class="entry--img">
+                        <a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">
+                            <img src="@blog.ImageUrl" alt="@blog.Title" />
+                        </a>
+                    </div>
+                    <div class="entry--meta">
+                        <span>@blog.CreationDateStr</span>/
+                        <span><a href="/blog/@blog.BlogGroup.UrlParam">@blog.BlogGroup.Title</a></span>
+                    </div>
+                    <div class="entry--title">
+                        <h2><a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">@blog.Title</a></h2>
+                    </div>
+                    <div class="entry--content">
+                    @blog.Summery
+                    </div>
+                    <div class="entry--more">
+                        <a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">ادامه مطلب</a>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+</section>

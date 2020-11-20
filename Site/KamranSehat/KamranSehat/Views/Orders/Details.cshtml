@@ -1,0 +1,72 @@
+﻿@model ViewModels.OrderDetailViewModel
+
+@{
+    ViewBag.Title = "سفارش کد " + Model.Order.Code;
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title">
+    <div class="bg-section">
+        <img src="/assets/images/page-title/title-22.jpg" alt="Background" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title title-2 text-center">
+                    <div class="title--content">
+                        <div class="title--heading">
+                            <h1>جزییات سفارشات کد @Model.Order.Code</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="portfolio portfolio-single bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="cart-table table-responsive">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="cart-product">
+                                <th class="cart-product-item">عنوان محصول</th>
+                                <th class="cart-product-price">مشاهده</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var orderDetail in Model.OrderDetails)
+                            {
+                                <tr class="cart-product">
+                                    <td class="cart-product-item">
+
+                                        <div class="cart-product-img">
+                                            <img src="@orderDetail.Product.ImageUrl" alt="@orderDetail.Product.Title" />
+                                        </div>
+                                        <div class="cart-product-name">
+                                            <h6>@orderDetail.Product.Title</h6>
+                                        </div>
+                                    </td>
+                                    <td class="cart-product-price">
+                                        <a href="/ShowProduct/@orderDetail.Product.Code/@Model.Order.Code"><i class="fa fa-eye"></i> مشاهده</a><br />
+                                        <a href="/download/@orderDetail.Product.Code"><i class="fa fa-download"></i> دانلود</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    <a href="/orders/list">بازگشت به لیست سفارشات</a>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

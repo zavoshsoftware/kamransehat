@@ -1,0 +1,98 @@
+﻿@model ViewModels.BusinessCreateViewModel
+@{
+    ViewBag.Title = "تقویم تولید محتوای برای اینستاگرام";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title page-title2">
+    <div class="bg-section">
+        <img src="/assets/images/page-title/banner-2.jpg" alt="دکتر کامران صحت" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+                <div class="title title-2 text-center">
+                    <div class="clearfix"></div>
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            <li><a href="/">خانه</a></li>
+                            <li class="active">ثبت کسب و کار</li>
+                        </ol>
+                        <div class="title--heading">
+                            <label>ثبت کسب و کار</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact1" class="contact-2 bg-white pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-5 business-desc">
+                
+                <p>
+                    ایده مناسب برای اشتراک گذاری پست در شبکه های اجتماعی کاری است که به نظر خیلی راحت است اما وقتی پشت میز خود می نشینید و می خواهید پست بگذارید، این کار بسیار سخت می شود. بسیاری از کسب و کارها به دلیل اینکه زمان زیادی را باید صرف این موضوع کنند، از فعالیت در شبکه های اجتماعی منصرف می شوند.
+                </p>
+                <p>
+                    اگر شما هم جز آن دسته از افرادی هستید که با مشکل تولید محتوا در شبکه های اجتماعی مواجه هستید با تکمیل فرم رو به رو و انتخاب یکی از پکیج ها می توانید هر روز صبح یک پیامک دریافت کنید که در آن پیامک کلیه فعالیت هایی که شما باید در آن روز در اینستاگرام انجام دهید ذکر شده است.
+                </p>
+                <p>
+                    صفحه اینستاگرام شما توسط متخصصین دیجیتال مارکتینگ بررسی می شود و روزانه بهترین پیشنهادات برای شما ارسال می گردد  و باعث می شود نتیجه ای که دوست دارید را از شبکه های اجتماعی دریافت کنید.                </p>
+                
+                <p>
+                    علاوه بر دریافت ایده های روزانه از طریق پیامک می توانید وارد حساب کاربری خود در وب سایت دکتر کامران صحت شوید و توضیحات بیشتر و مثال هایی در رابطه با هر ایده دریافت کنید.
+                </p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+
+                <div class="contact-form">
+                    @using (Html.BeginForm("Create", "Businesses", FormMethod.Post, new {enctype = "multipart/form-data"}))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.FullName, new {@placeholder = "نام و نام خانوادگی*", @class = "form-control"})
+                            </div>
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.CellNumber, new {@placeholder = "تلفن همراه*", @class = "form-control"})
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.Email, new {@placeholder = "ایمیل", @class = "form-control"})
+                            </div>
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.InstagramPage, new {@placeholder = "آدرس صفحه اینستاگرام*", @class = "form-control"})
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.Type, new {@placeholder = "نوع کسب و کار*", @class = "form-control"})
+                            </div>
+                            <div class="col-md-6">
+                                @Html.DropDownList("PackageId", (IEnumerable<SelectListItem>)ViewBag.PackageId, "انتخاب پکیج", new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.TextAreaFor(model => model.Description, new {@placeholder = "توضیحات اضافی", @class = "form-control"})
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" value="ثبت درخواست" class="btn btn--secondary btn--block">
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

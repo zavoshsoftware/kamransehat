@@ -1,0 +1,68 @@
+﻿@model ViewModels.ActivateUserViewModel
+@{
+    ViewBag.Title = "تقویم تولید محتوای برای اینستاگرام";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title page-title2">
+    <div class="bg-section">
+        <img src="/assets/images/page-title/banner-2.jpg" alt="دکتر کامران صحت" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+                <div class="title title-2 text-center">
+                    <div class="clearfix"></div>
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            <li><a href="/">خانه</a></li>
+                            <li class="active">ثبت کسب و کار</li>
+                        </ol>
+                        <div class="title--heading">
+                            <label>ثبت کسب و کار</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact1" class="contact-2 bg-white pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-5 business-desc">
+
+                <p>
+                   یک کد فعال سازی از طریق پیامک برای شما ارسال شده است. آن را در باکس رو به رو وارد نمایید.
+                </p>
+                <p>
+این کد فعال سازی معادل کلمه عبور شما برای ورود به وب سایت نیز می باشد.                </p>
+               
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+
+                <div class="contact-form">
+                    @using (Html.BeginForm("Activate", "Businesses", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.TextBoxFor(model => model.ActivateCode, new { @placeholder = "کد فعال سازی*", @class = "form-control" })
+                            </div>
+                            
+                        </div>
+                  
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" value="ثبت درخواست" class="btn btn--secondary btn--block">
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,224 @@
+﻿@model ViewModels.ProductDetailViewModel
+
+@{
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+<section id="page-title" class="page-title page-title2">
+    <div class="container-fluid bg-overlay bg-overlay-dark">
+        <div class="bg-section">
+            <img src="/assets/images/page-title/title-22.jpg" alt="کامران صحت" />
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title title-2 text-center">
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            <li><a href="/">خانه</a></li>
+                            <li><a href="/product/video">ویدیو های آموزشی</a></li>
+                            <li class="active">@Model.Product.Title</li>
+                        </ol>
+                        <div class="title--heading">
+                            <label>@Model.Product.Title</label>
+                        </div>
+                        @*<div class="title--desc">
+                                <p>@Model.Product.Summery</p>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="portfolio" class="portfolio portfolio-single bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="portfolio--title">
+                    <h1>@Model.Product.Title</h1>
+                    <div class="divider--line"><i class="divider divider--1"></i><i class="divider divider--2"></i><i class="divider divider--3"></i><i class="divider divider--4"></i></div>
+                </div>
+                <div class="portfolio--content">
+                    @Html.Raw(Model.Product.Body)
+                </div>
+                <div class="portfolio--list">
+                    <ul class="list-unstyled mb-0">
+                        <li><span>حجم فایل: </span>@Model.Product.Size</li>
+                        <li><span>مدت زمان فایل: </span>@Model.Product.Duration</li>
+                        <li><span>قیمت: </span>@Model.Product.AmountStr</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <a href="/addtobasket/@Model.Product.Code" class="btn btn--primary btn--bordered btn--rounded btn--block btn--basket"><i class="fa fa-shopping-basket"></i>افزودن به سبد خرید</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="portfolio--img">
+                    <video width="100%" controls>
+                        <source src="@Model.Product.SampleVideoUrl" type="video/mp4">Your browser does not support HTML5 video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="comment-noavatar portfolio portfolio-single ">
+    <div class="container">
+        <div class="row">
+
+            <div class="entry-widget entry-related clearfix">
+                <div class="entry-widget-title">
+                    <h4>ویدیو های مرتبط</h4>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                </div>
+                <div class="entry-widget-content">
+                    <div class="row">
+                        @foreach (var product in Model.RelatedProducts)
+                        {
+
+                            <div class="col-xs-12 col-sm-6 col-md-3 product-item">
+                                <div class="product--img">
+                                    <a href="/product/@product.ProductGroup.UrlParam/@product.Code">
+                                        <img src="@product.ImageUrl" alt="@product.Title" />
+                                    </a>
+                                </div>
+                                <div class="product--content">
+                                    <div class="product--cat">
+                                    </div>
+                                    <div class="product--title">
+                                        <h3><a href="/product/@product.ProductGroup.UrlParam/@product.Code">@product.Title</a></h3>
+                                    </div>
+                                    <div class="product--price">
+                                        <span>@product.AmountStr</span>
+                                    </div>
+                                    <div class="product-add-to-basket">
+                                        <a href="/addtobasket/@product.Code" class="btn btn--primary btn--bordered btn--rounded btn--block">افزودن به سبد خرید</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="entry-widget entry-comments clearfix">
+                <div class="entry-widget-title">
+                    <h4>@Model.CommentMessage</h4>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                </div>
+                <div class="entry-widget-content">
+                    <ul class="comments-list">
+                        @foreach (var comment in Model.ProductComments)
+                        {
+                            <li class="comment-body">
+                                <div class="comment">
+                                    <h6>@comment.Name</h6>
+                                    <div class="date">@comment.CreationDateStr</div>
+                                    <p>@Html.Raw(comment.Message.Replace(Environment.NewLine, "<br />"))</p>
+                                </div>
+                                @if (!string.IsNullOrEmpty(comment.Response))
+                                {
+                                    <ul class="comment-children">
+                                        <li class="comment-body">
+                                            <div class="comment">
+                                                <h6>@comment.ResponseName</h6>
+                                                <div class="date">@comment.ResponseDateStr</div>
+                                                <p>@Html.Raw(comment.Response.Replace(Environment.NewLine, "<br />"))</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                }
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="entry-widget entry-add-comment mb-0 clearfix">
+                <div class="entry-widget-title">
+                    <h4>ثبت نظر</h4>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <p>کاربر گرامی، ایمیل شما منتشر نمی شود و بعد از دریافت پاسخ از طریق ایمیل به شما اطلاع رسانی می شود.</p>
+                </div>
+                <div class="entry-widget-content">
+                    <div id="post-comment" class="mb-0">
+                        <div id="errorDivQ" class="alert alert-danger"></div>
+                        <div id="successDivQ" class="alert alert-success">نظر شما با موفقیت ثبت شد و پس از تایید مدیر سایت در سایت نمایش داده خواهد شد.</div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <input type="text" class="form-control" id="name" placeholder="نام و نام خانوادگی" />
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <input type="email" class="form-control" id="email" placeholder="ایمیل" />
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <textarea class="form-control" id="comment" rows="2" placeholder="نظر شما"></textarea>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <button type="button" onclick="submitComment();" class="btn btn--primary btn--block">نظر خود را ثبت نمایید</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script type="text/javascript">
+
+        function submitComment() {
+            var nameVal = $('#name').val();
+            var emailVal = $('#email').val();
+            var messageVal = $('#comment').val();
+            if (nameVal !== "" && messageVal !== "") {
+                var url = window.location.pathname;
+                var urlParam = url.substring(url.lastIndexOf('/') + 1);
+                $.ajax(
+                    {
+                        url: "/ProductComments/SubmitComment",
+                        data: { name: nameVal, email: emailVal, message: messageVal, urlParam: urlParam },
+                        type: "POST"
+                    }).done(function (result) {
+                        if (result == 'true') {
+                            $('#errorDivQ').css('display', 'none');
+                            $('#successDivQ').css('display', 'block');
+                        } else {
+                            $('#errorDivQ').css('display', 'block');
+                            $('#successDivQ').css('display', 'none');
+                            $('#errorDivQ').html('کاربر گرامی، متاسفانه ثبت با خطا مواجه شده است. لطفا مجدادا تلاش کنید.');
+                        }
+                    });
+            } else {
+                $('#errorDivQ').css('display', 'block');
+                $('#successDivQ').css('display', 'none');
+                $('#errorDivQ').html('فیلد های ستاره دار را تکمیل نمایید.');
+            }
+        }
+    </script>
+}

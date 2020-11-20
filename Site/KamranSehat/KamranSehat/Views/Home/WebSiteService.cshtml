@@ -1,0 +1,1006 @@
+﻿@model ViewModels.WebSitePageViewModel
+
+@{
+		ViewBag.Title = Model.ProductGroup.Title;
+		Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title page-title2">
+	<div class="container-fluid bg-overlay bg-overlay-dark">
+		<div class="bg-section">
+			<img src="/assets/images/page-title/title-22.jpg" alt="کامران صحت" />
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="title title-2 text-center">
+					<div class="title--content">
+						<ol class="breadcrumb">
+							<li><a href="/">خانه</a></li>
+							<li class="active">@Model.ProductGroup.Title</li>
+						</ol>
+						<div class="title--heading">
+							<label>@Model.ProductGroup.Title</label>
+						</div>
+				 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="portfolio" class="portfolio portfolio-single bg-white">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="portfolio--title">
+					<h1>@Model.ProductGroup.Title</h1>
+					<div class="divider--line">
+						<i class="divider divider--1"></i>
+						<i class="divider divider--2"></i>
+						<i class="divider divider--3"></i>
+						<i class="divider divider--4"></i>
+					</div>
+				</div>
+				<div class="portfolio--content">
+					@Html.Raw(Model.ProductGroup.Body)
+				</div><!-- .portfolio--content end -->
+
+
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="portfolio--img">
+
+					<img src="@Model.ProductGroup.ImageUrl" width="100%" />
+
+				</div>
+			</div>
+		</div>
+	<div class="row site-package">
+			@if (Model.ProductGroup.UrlParam == "طراحی-سایت-شرکتی")
+			{
+				<h2>قیمت طراحی وب سایت</h2>
+				<p>
+					شما می توانید یکی از دو پکیج زیر را برای طراحی وب سایت خود برگزینید.
+				</p>
+				<table class="table table-bordered table-responsive">
+				<thead>
+				<tr>
+					<td>ردیف</td>
+					<td>امکانات</td>
+					<td>پکیج نقره ای</td>
+					<td>پکیج طلایی</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>1</td>
+					<td>صفحه تماس با ما</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>فرم تماس با ما</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+						
+				<tr>
+					<td>3</td>
+					<td>صفحه درباره ما</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>4</td>
+					<td>معرفی خدمات با امکان گروه بندی خدمات</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>5</td>
+					<td>ساخت و ويرايش صفحه مقالات(نامحدود)</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>6</td>
+					<td>ساخت و ويرايش صفحه اخبار(نامحدود)</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>7</td>
+					<td>معرفی محصولات با امکان گروه بندی</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>8</td>
+					<td>گالری تصاویر با امکان مدیریت و گروه بندی</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>9</td>
+					<td>تعيين چندين کاربر براي مديريت وب سايت</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>10</td>
+					<td>مديريت اسلايدر و محتواي تمام صفحات اصلي سايت</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>11</td>
+					<td>مشخص نمون محل شرکت در google map</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>12</td>
+					<td>ثبت نام در سايت و صفحه ورود اعضا</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>13</td>
+					<td>خبرنامه</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>14</td>
+					<td>سازگاري کامل با موبايل و تبلت</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>15</td>
+					<td>نمایش نمونه کارها</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>16</td>
+					<td>امکان درج لینک شبکه های اجتماعی</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>17</td>
+					<td>طراحی قالب اختصاصی</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+						
+				<tr>
+					<td>18</td>
+					<td>امکان ارسال پیام توسط کاربران از طریق واتس اپ</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+
+				<tr>
+					<td>19</td>
+					<td>فضاي هاست رایگان یک ساله </td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+
+				<tr>
+					<td>20</td>
+					<td>یک جلسه آموزش مدیریت محتوای سایت</td>
+					<td><i class="fa fa-check"></i></td>
+					<td><i class="fa fa-check"></i></td>
+				</tr>
+
+				<tr>
+					<td>21</td>
+					<td>پرسش و پاسخ کاربران در وب سايت</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+						
+				<tr>
+					<td>22</td>
+					<td>سوالات متداول</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+						
+				<tr>
+					<td>23</td>
+					<td>امکان نمایش ویدیو در سایت</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+						
+				<tr>
+					<td>24</td>
+					<td>چت آنلاین</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+						
+				<tr>
+					<td>25</td>
+					<td>نظرسنجی</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+						
+				<tr>
+					<td>26</td>
+					<td>امکان درج نظر برای محصولات و مقالات</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+						
+				<tr>
+					<td>27</td>
+					<td>معرفی مدیران سازمان</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>	
+				<tr>
+					<td>28</td>
+					<td>اشتراک گذاری مطالب سایت در شبکه های اجتماعی</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+				<tr>
+					<td>29</td>
+					<td>معرفی نمایندگان و شعب</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+				<tr>
+					<td>30</td>
+					<td>شرایط واگذاری نمایندگی</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+						
+				<tr>
+					<td>31</td>
+					<td>سئو داخلی</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>		
+		
+						
+				<tr>
+					<td>32</td>
+					<td>آموزش 2 ساعته تولید محتوا جهت کسب رتبه بهتر در گوگل</td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+						
+
+				<tr>
+					<td>33</td>
+					<td>SSL اختصاصي </td>
+					<td><i class="fa fa-remove"></i></td>
+					<td><i class="fa fa-check"></i></td>
+
+				</tr>
+					<tr>
+					<td>34</td>
+					<td>زمان انجام کار</td>
+					<td>15 روز</td>
+					<td>25 روز</td>
+				</tr>
+					<tr>
+					<td>34</td>
+					<td>پشتيباني رايگان</td>
+					<td>3 ماه</td>
+					<td>12 ماه</td>
+				</tr>
+					<tr>
+					<td>35</td>
+					<td>دامنه رایگان</td>
+					<td>.ir</td>
+					<td>.ir</td>
+				</tr>
+				<tr>
+					<td>36</td>
+					<td>قیمت</td>
+					<td>3،000،000 تومان</td>
+					<td>5،500،000 تومان</td>
+				</tr>	
+				<tr>
+					<td> </td>		<td>ثبت سفارش</td>
+				 
+					<td><a href="/addtobasket/1019"><i class="fa fa-shopping-basket"></i> افزودن به سبد خرید</a></td>
+					<td><a href="/addtobasket/1020"><i class="fa fa-shopping-basket"></i> افزودن به سبد خرید</a></td>
+
+				</tr>
+				</tbody>
+				</table>
+
+				<h2>ویژگی وب سایت ها</h2>
+				<ul>
+					<li>کلیه وب سایت ها به صورت اختصاصی برنامه نویسی خواهند شد و از cms های آماده استفاده نمی شود.</li>
+					<li>کلیه وب سایت ها به صورت داینامیک می باشد و محتوای سایت را می توانید تغییر دهید</li>
+					<li>پنل مدیریت وب سایت بسیار ساده می باشد و به راحتی می توانید محتوای سایت خود را به روز کنید</li>
+					<li>امنیت بالای وب سایت ها</li>
+					<li>پشتیبانی 24 ساعته</li>
+				</ul>
+			}			
+			@if (Model.ProductGroup.UrlParam == "طراحی-فروشگاه-اینترنتی")
+			{
+					<h2>قیمت طراحی فروشگاه اینترنتی</h2>
+					<p>
+						شما می توانید یکی از دو پکیج زیر را برای طراحی وب سایت خود برگزینید.
+					</p>
+					<table class="table table-bordered table-responsive">
+						<thead>
+							<tr>
+								<td>ردیف</td>
+								<td>امکانات</td>
+								<td>پکیج برنزی
+						 
+								</td>
+								<td>پکیج نقره ای</td>
+								<td>پکیج طلایی</td>
+							</tr>
+						</thead>
+					<tbody>
+					
+					<tr>
+						<td>1</td>
+						<td>نمایش 	محصولات مرتبط، پرفروش‌ترین محصولات، پربازدید ترین محصولات</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>2</td>
+						<td> 	قیمت گذاری محصولات</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+		
+						
+					<tr>
+						<td>3</td>
+						<td> امکان تعیین حداقل مبلغ برای حمل و نقل رایگان</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>4</td>
+						<td>امکان تعیین هزینه ارسال</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+				
+						
+					<tr>
+						<td>5</td>
+						<td> امکان دسته بندی محصولات در n سطح</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						<tr>
+							<td>6</td>
+							<td>امکان فروش محصولات مجازی در قالب انواع فایل یا محصولات فیزیکی</td>
+							<td><i class="fa fa-check"></i></td>
+							<td><i class="fa fa-check"></i></td>
+
+							<td><i class="fa fa-check"></i></td>
+						</tr>
+	
+					<tr>
+						<td>7</td>
+						<td>ثبت تعداد نا محدود محصول</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>8</td>
+						<td>تغییر اندازه خودکار و نهان تصاویر</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>9</td>
+						<td>مرتب سازی مشتریان</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>10</td>
+						<td>جستجوی محصولات</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>11</td>
+						<td>فیلتر کردن محصولات</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>12</td>
+						<td>قابلیت اختصاص تصویر به هر دسته بندی و محصول</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>13</td>
+						<td>امکان تعریف تصاویر متعدد برای هر محصول</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+				
+					<tr>
+						<td>14</td>
+						<td>عبارات محبوب جستجو توسط کاربران</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+
+					<tr>
+						<td>15</td>
+						<td>افزودن به لیست دلخواه</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+
+					<tr>
+						<td>16</td>
+						<td>برآورد هزینه حمل و نقل براساس مبلغ کل سفارش</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						 
+					<tr>
+						<td>17</td>
+						<td>امکان پرداخت از طریق زرین پال</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>		
+						
+						
+					<tr>
+						<td>18</td>
+						<td>امکان پرداخت در محل هنگام تحویل</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+
+					<tr>
+						<td>19</td>
+						<td>امکان پرداخت از طریق واریز به حساب و ارسال اطلاعات پرداخت</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+						
+				
+						
+						
+						
+					<tr>
+						<td>20</td>
+						<td> نمایش اطلاعات مشتریان به صورت داشبوردی</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+						
+						
+					<tr>
+						<td>21</td>
+						<td>نمایش آدرس های مختلف یک کاربر و امکان مدیریت آن ها</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+						
+						
+					<tr>
+						<td>22</td>
+						<td>وضعیت سفارش کاربران و تاریخچه سفارشات</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+						<tr>
+						<td>23</td>
+						<td>اتصال به پنل پیامکی و ارسال پیامک به کاربر در زمان های تغییر وضعیت سفارش</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+						
+				
+						
+					<tr>
+						<td>24</td>
+						<td>پیگیری محموله ارسالی</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+						
+					<tr>
+						<td>25</td>
+						<td>امکان تعریف کد تخفیف مبلغی و درصدی برای کاربران</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+						
+						
+					<tr>
+						<td>26</td>
+						<td>امکان ایجاد پروموشن و تعیین قیمت قبل و بعد برای هر محصول</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+						 
+
+					<tr>
+						<td>27</td>
+						<td>صفحه تماس با ما</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>28</td>
+						<td>فرم تماس با ما</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>29</td>
+						<td>صفحه درباره ما</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>30</td>
+						<td>معرفی خدمات با امکان گروه بندی خدمات</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>31</td>
+						<td>ساخت و ويرايش صفحه مقالات(نامحدود)</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>32</td>
+						<td>ساخت و ويرايش صفحه اخبار(نامحدود)</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>33</td>
+						<td>امکان ارسال پیام توسط کاربران از طریق واتس اپ</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>34</td>
+						<td>گالری تصاویر با امکان مدیریت و گروه بندی</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>35</td>
+						<td>تعيين چندين کاربر براي مديريت وب سايت</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>36</td>
+						<td>مديريت اسلايدر و محتواي تمام صفحات اصلي سايت</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>37</td>
+						<td>مشخص نمون محل شرکت در google map</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>38</td>
+						<td>ثبت نام در سايت و صفحه ورود اعضا</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>39</td>
+						<td>خبرنامه</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>40</td>
+						<td>سازگاري کامل با موبايل و تبلت</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>41</td>
+						<td>نمایش نمونه کارها</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>42</td>
+						<td>امکان درج لینک شبکه های اجتماعی</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>43</td>
+						<td>طراحی قالب اختصاصی</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+	
+
+					<tr>
+						<td>44</td>
+						<td>فضاي هاست رایگان یک ساله </td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>45</td>
+						<td>یک جلسه آموزش مدیریت محتوای سایت</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+					 <td><i class="fa fa-check"></i></td></tr>
+						 
+
+					<tr>
+						<td>46</td>
+						<td>سوالات متداول</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>47</td>
+						<td>امکان نمایش ویدیو در سایت</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+
+			
+					<tr>
+						<td>48</td>
+						<td>نظرسنجی</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>49</td>
+						<td>امکان درج نظر برای محصولات و مقالات</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>50</td>
+						<td>معرفی مدیران سازمان</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>51</td>
+						<td>اشتراک گذاری مطالب سایت در شبکه های اجتماعی</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>52</td>
+						<td>معرفی نمایندگان و شعب</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>53</td>
+						<td>شرایط واگذاری نمایندگی</td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+
+						<tr>
+							<td>54</td>
+							<td>SSL اختصاصي </td>
+							<td><i class="fa fa-check"></i></td>
+							<td><i class="fa fa-check"></i></td>
+
+							<td><i class="fa fa-check"></i></td>
+						</tr>
+						
+					<tr>
+						<td>55</td>
+						<td>محصولات اخیرا مشاهده شده</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>56</td>
+						<td> 	ورود و خروج دسته ای محصولات و اطلاعات مشتریان با استفاده از فایل اکسل</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>57</td>
+						<td>چت آنلاین</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+
+					<tr>
+						<td>58</td>
+						<td>امکان تعریف نرخ مالیات بر ارزش افزوده</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>59</td>
+						<td>اطلاع به کاربر در زمان موجود شدن محصول</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+						
+						
+						
+					<tr>
+						<td>60</td>
+						<td>حمل به آدرس های مختلف برای یک کاربر</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+						
+						
+					<tr>
+						<td>61</td>
+						<td>دریافت نماد اعتماد برای وب سایت</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td></tr>		
+						
+					<tr>
+						<td>62</td>
+						<td>امکان پرداخت از طریق دروازه های پرداخت بانک های داخل کشور</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+						<td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>63</td>
+						<td>امکان تکرار سفارش قبلی توسط کاربر تنها با یک کلیک</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>64</td>
+						<td>امکان فروش محصولات مجازی در قالب انواع فایل در کنار محصولات فیزیکی</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+						
+			
+					<tr>
+						<td>65</td>
+						<td>سئو داخلی</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+
+
+					<tr>
+						<td>66</td>
+						<td>آموزش 2 ساعته تولید محتوا جهت کسب رتبه بهتر در گوگل</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-check"></i></td>
+
+					 <td><i class="fa fa-check"></i></td></tr>
+
+
+						
+						
+					<tr>
+						<td>67</td>
+						<td>امکان اتصال به وب سرویس شرکت پست جهت دریافت هزینه ارسال</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-remove"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+							
+					<tr>
+						<td>68</td>
+						<td>امکان ثبت وزن محصولات جهت استعلام از وب سرویس پست</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-remove"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+					<tr>
+						<td>69</td>
+						<td>امکان تعریف تخفیفات خاص برای هر دسته از مشتریان</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-remove"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>70</td>
+						<td>امکان تعریف تخفیفات پلکانی</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-remove"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+						
+					<tr>
+						<td>71</td>
+						<td>امکان طبقه بندی مشتریان بر اساس مجموع خرید های قبلی</td>
+						<td><i class="fa fa-remove"></i></td>
+						<td><i class="fa fa-remove"></i></td>
+
+						<td><i class="fa fa-check"></i></td></tr>
+			
+					<tr>
+						<td>72</td>
+						<td>زمان انجام کار</td>
+						<td>20 روز</td>
+						<td>35 روز</td>
+					 <td>50 روز</tr>
+					<tr>
+						<td>73</td>
+						<td>پشتيباني رايگان</td>
+						<td>6 ماه</td>
+						<td>9 ماه</td>
+						<td>12 ماه</td>
+					 </tr>
+					<tr>
+						<td>74</td>
+						<td>دامنه رایگان</td>
+						<td>.ir</td>
+						<td>.ir</td>
+						<td>.ir</td>
+					  
+					<tr>
+						<td>75</td>
+						<td>قیمت</td>
+						<td>10،000،000 تومان</td>
+						<td>15،000،000 تومان</td>
+						<td>25،000،000 تومان</td>
+					<tr>
+						<td> </td>
+						<td>ثبت سفارش</td>
+
+						<td><a href="/addtobasket/1021"><i class="fa fa-shopping-basket"></i> افزودن به سبد خرید</a></td>
+						<td><a href="/addtobasket/1022"><i class="fa fa-shopping-basket"></i> افزودن به سبد خرید</a></td>
+						<td><a href="/addtobasket/1023"><i class="fa fa-shopping-basket"></i> افزودن به سبد خرید</a></td>
+
+ </tr>
+					</tbody>
+					</table>
+
+					<h2>ویژگی وب سایت ها</h2>
+					<ul>
+						<li>کلیه وب سایت ها به صورت اختصاصی برنامه نویسی خواهند شد و از cms های آماده استفاده نمی شود.</li>
+						<li>کلیه وب سایت ها به صورت داینامیک می باشد و محتوای سایت را می توانید تغییر دهید</li>
+						<li>پنل مدیریت وب سایت بسیار ساده می باشد و به راحتی می توانید محتوای سایت خود را به روز کنید</li>
+						<li>امنیت بالای وب سایت ها</li>
+						<li>پشتیبانی 24 ساعته</li>
+					</ul>
+			}
+	</div>
+	
+	</div>
+</section>

@@ -1,0 +1,128 @@
+﻿@model ViewModels.BaseViewModel
+
+@{
+    ViewBag.Title = "تماس با ما";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title page-title2">
+    <div class="bg-section">
+        <img src="/assets/images/page-title/banner-2.jpg" alt="دکتر کامران صحت" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+                <div class="title title-2 text-center">
+                    <div class="clearfix"></div>
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            <li><a href="/">خانه</a></li>
+                            <li class="active">تماس با ما</li>
+                        </ol>
+                        <div class="title--heading">
+                            <label>تماس با ما</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact1" class="contact-2 bg-white pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="row mb-50">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="contact--info">
+                            <h3>ایمیل</h3>
+                            <p>  info@kamransehat.ir</p>
+                            <p>  drsehat@outlook.com</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="contact--info">
+                            <h3>تلفن تماس</h3>
+                            <p>09121008545</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                 
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="contact--info">
+                            <h3>شبکه های اجتماعی</h3>
+                            <p>
+                                <a href="https://www.instagram.com/kamransehat/"><i class="fa fa-instagram"></i></a>
+                                <a href="https://t.me/drkamransehat"><i class="fa fa-telegram"></i></a>
+                                <a href="https://twitter.com/drkamransehat"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/in/dr-kamran-sehat-4a610a78/"><i class="fa fa-linkedin"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="alert alert-danger" id="errorDivQ"></div>
+                <div class="alert alert-success" id="SuccessDivQ">با تشکر، پیغام شما با موفقیت ثبت گردید.</div>
+                <div class="contact-form">
+                    <form class="mb-0">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="contact-name" id="name" placeholder="نام" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" name="contact-email" id="email" placeholder="ایمیل" required>
+                            </div>
+                            <div class="col-md-12">
+                                <textarea class="form-control" name="contact-message" id="message" rows="2" placeholder="پیغام" required></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="button" value="ارسال پیام" onclick="postContactForm();" id="submit" class="btn btn--secondary btn--block">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        function postContactForm() {
+             
+                var nameVal = $('#name').val();
+                var emailVal = $('#email').val();
+                var messageVal = $('#message').val();
+
+                if (nameVal !== "" && messageVal !== "" && emailVal !== "") {
+                    $.ajax(
+                        {
+                            url: "/ContactForms/PostContactForm",
+                            data: { Name: nameVal, Email: emailVal, Message: messageVal },
+                            type: "POST"
+                        }).done(function(result) {
+                        if (result == 'true') {
+                            $('#errorDivQ').css('display', 'none');
+                            $('#SuccessDivQ').css('display', 'block');
+                        } else {
+                            $('#errorDivQ').css('display', 'block');
+                            $('#SuccessDivQ').css('display', 'none');
+                            $('#errorDivQ').html('ایمیل وارد شده صحیح نمی باشد.');
+                        }
+                    });
+                } else {
+                    $('#errorDivQ').css('display', 'block');
+                    $('#SuccessDivQ').css('display', 'none');
+                    $('#errorDivQ').html('تمامی فیلد های زیر را تکمیل نمایید.');
+
+                }
+        
+        }
+    </script>
+}

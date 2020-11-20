@@ -1,0 +1,696 @@
+﻿@model ViewModels.HomeViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>وب سایت دکتر کامران صحت</title>
+    <link rel="canonical" href="https://kamransehat.ir/" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="در وب سایت شخصی دکتر کامران صحت می توانید از جدیدترین محصولات، ویدیو های آموزشی، مقالات، فایل های صوتی و کتاب های دکتر کامران صحت دیدن فرمایید. برای مشاوره آنلاین وارد وب سایت دکتر کامران صحت شوید. همچنین می توانید جهت درخواست مشاوره حضوری و تلفنی با ما در تماس باشید.">
+    <link href="/images/favicon.png" rel="icon">
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch.png">
+    <link href='http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CDroid+Serif:400,400i,700,700i' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/external.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="/assets/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css">
+    <link href="~/assets/css/style-rtl.css" rel="stylesheet" />
+    <meta property="og:title" content="وب سایت دکتر کامران صحت" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kamransehat.ir/" />
+    <meta property="og:image" content="https://kamransehat.ir/assets/images/logo/logo-dark.png" />
+    <meta property="og:description" content="در وب سایت شخصی دکتر کامران صحت می توانید از جدیدترین محصولات، ویدیو های آموزشی، مقالات، فایل های صوتی و کتاب های دکتر کامران صحت دیدن فرمایید. همچنین می توانید جهت درخواست مشاوره با ما در تماس باشید." />
+    <meta property="og:site_name" content="دکتر کامران صحت" />
+    <meta name="google-site-verification" content="PSQrXbZX3QN9zJoTbtvk4MFq4m9mTHuCaG81X844gQs" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151360331-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-151360331-1');
+    </script>
+    <script type="application/ld+json">
+        {
+        "@@context": "http://schema.org",
+        "@@type": "Organization",
+        "name": "دکتر کامران صحت",
+        "alternateName": "kamransehat",
+        "url": "https://kamransehat.ir/",
+        "logo": "https://kamransehat.ir/assets/images/logo/logo-dark.png",
+        "contactPoint": [{
+        "@@type": "ContactPoint",
+        "telephone": "+989121008545",
+        "contactType": "sales",
+        "areaServed": "IR",
+        "availableLanguage": "Persian"
+        }],
+        "sameAs": [
+        "https://www.instagram.com/kamransehat/",
+        "https://twitter.com/drkamransehat",
+        "https://www.linkedin.com/in/dr-kamran-sehat-4a610a78/"
+        ]
+        }
+    </script>
+    
+    <script type="application/ld+json">
+       
+        {
+        "@@context": "http://schema.org",
+        "@@type": "SiteNavigationElement",
+        "headline": "Headline for Site Navigation",
+        "name": [
+        "وب سایت کامران صحت",
+        "درباره کامران صحت",
+        "تماس با کامران صحت",
+        "ویدیو های آموزشی",
+        "وبلاگ",
+        "فایل های صوتی"
+        ],
+        "description": [
+        "وب سایت شخصی دکتر کامران صحت",
+        "رزومه کامران صحت",
+        "اطلاعات تماس دکتر کامران صحت",
+        "خرید و دانلود ویدیو های آموزشی",
+        "مطالب وبلاگ کامران صحت",
+        "فایل های صوتی و پادکست های دکتر کامران صحت"
+        ],
+        "url": [
+        "https://kamransehat.ir/",
+        "https://kamransehat.ir/about",
+        "https://kamransehat.ir/contact",
+        "https://kamransehat.ir/product/video",
+        "https://kamransehat.ir/blog/all",
+        "https://kamransehat.ir/radio"
+        ]
+        }
+      
+    </script>
+</head>
+<body>
+    <div id="wrapper" class="wrapper clearfix">
+        <header id="navbar-spy" class="header header-1 header-transparent header-fixed">
+            <nav id="primary-menu" class="navbar navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="logo" href="/">
+                            <img class="logo-light" src="/assets/images/logo/logo-light.png" alt="Whole logo">
+                            <img class="logo-dark" src="/assets/images/logo/logo-dark.png" alt="Whole logo">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse pull-right home-navbar-collapse" id="navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-left dark-menu home-menu">
+                            @Html.Partial("FrontEnd/_MenuPartial")
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section id="slider" class="slider slider-shop slider-rs-dark">
+            <div class="rev_slider_wrapper">
+                <div id="slider1" class="rev_slider" data-version="5.0">
+                    <ul>
+                        <li data-transition="zoomout"
+                            data-slotamount="default"
+                            data-easein="Power4.easeInOut"
+                            data-easeout="Power4.easeInOut"
+                            data-masterspeed="2000">
+                            <img src="/assets/images/sliders/slide-bg/16n.jpg" alt="Slide Background Image" width="1920" height="1280">
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="['280','-60','-120','0']"
+                                 data-y="center" data-voffset="-65"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                 data-start="750"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                @*<div class="slide--headline">کارگاه آموزشی فروش تلفنی</div>*@
+                                <h1 class="slide--headline">دکتر کامران صحت</h1>
+                            </div>
+                            <div class="tp-caption"
+                                 @*data-x="center" data-hoffset="['250','-280','-280','0']"*@
+                                 data-x="center" data-hoffset="['300','-60','-120','0']"
+                                 data-y="center" data-voffset="10"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                 data-start="1000"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                @*<div class="slide--bio">سه شنبه 5 آذر 98، ساعت 18 الی 22، مدرس: دکتر کامران صحت</div>*@
+                                <div class="slide--bio">دکتر کامران صحت دارای مدرک دکتری DBA از لندن </div>
+                            </div>
+                            <div class="tp-caption"
+                                 id="slide-163-layer-6"
+                                 data-x="center" data-hoffset="['400','-270','-270','0']"
+                                 data-y="center" data-voffset="80"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-whitespace="nowrap"
+                                 data-transform_idle="o:1;"
+                                 data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
+                                 data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                 data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-mask_out="x:inherit;y:inherit;"
+                                 data-start="1250"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+                                 data-basealign="slide"
+                                 data-responsive_offset="on"
+                                 data-responsive="off">
+                                <div class="slide-action">
+                                    <a class="btn btn--primary" target="_blank" href="/about">درباره دکتر صحت</a>
+                                    @*<a class="btn btn--primary" target="_blank" href="https://evnd.co/zeCVo">ثبت نام در کارگاه</a>*@
+                                </div>
+                            </div>
+                        </li>
+                        <li data-transition="zoomout"
+                            data-slotamount="default"
+                            data-easein="Power4.easeInOut"
+                            data-easeout="Power4.easeInOut"
+                            data-masterspeed="2000">
+                            <img src="/assets/images/sliders/slide-bg/12n.jpg" alt="Slide Background Image" width="1920" height="1280">
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="['280','-60','-120','0']"
+                                 data-y="center" data-voffset="-65"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                 data-start="750"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <label class="slide--headline">
+                                    دکتر کامران صحت
+                                </label>
+                                @*<h1 class="slide--headline">
+                                    دکتر کامران صحت
+                                </h1>*@
+                            </div>
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="['280','-60','-120','0']"
+                                 data-y="center" data-voffset="10"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                 data-start="1000"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--bio">مدرس و مشاور برندهای مطرح داخلی و بین المللی</div>
+                            </div>
+                            <div class="tp-caption"
+                                 id="slide-163-layer-6"
+                                 data-x="center" data-hoffset="['400','-270','-270','0']"
+                                 data-y="center" data-voffset="80"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-whitespace="nowrap"
+                                 data-transform_idle="o:1;"
+                                 data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
+                                 data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                 data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-mask_out="x:inherit;y:inherit;"
+                                 data-start="1250"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+                                 data-basealign="slide"
+                                 data-responsive_offset="on"
+                                 data-responsive="off">
+                                <div class="slide-action">
+                                    <a class="btn btn--primary" href="/product/video">ویدیو های آموزشی</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-transition="zoomout"
+                            data-slotamount="default"
+                            data-easein="Power4.easeInOut"
+                            data-easeout="Power4.easeInOut"
+                            data-masterspeed="2000" class="bg-overlay bg-overlay-dark">
+                            <img src="/assets/images/sliders/slide-bg/17n.jpg" alt="Slide Background Image" width="1920" height="1280">
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="['280','-60','-120','0']"
+                                 data-y="center" data-voffset="-65"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                 data-start="750"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--headline">
+                                    دکتر کامران صحت
+                                </div>
+                            </div>
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="['280','-60','-120','0']"
+                                 data-y="center" data-voffset="10"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                 data-start="1000"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--bio">تالیف و ترجمه 18 جلد کتاب توسط دکتر کامران صحت</div>
+                            </div>
+                            <div class="tp-caption"
+                                 id="slide-163-layer-6"
+                                 data-x="center" data-hoffset="['400','-270','-270','0']"
+                                 data-y="center" data-voffset="80"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-whitespace="nowrap"
+                                 data-transform_idle="o:1;"
+                                 data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
+                                 data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                 data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-mask_out="x:inherit;y:inherit;"
+                                 data-start="1250"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+                                 data-basealign="slide"
+                                 data-responsive_offset="on"
+                                 data-responsive="off">
+                                <div class="slide-action">
+                                    <a class="btn btn--primary" href="/blog/all">مطالب وبلاگ</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="number1" class="number number-1 bg-white pb-100">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <div class="heading heading-2 text--center mb-40">
+                            <p class="heading--subtitle">موفقیت در کسب و کار حق شماست</p>
+                            <h2 class="heading--title">ارایه راهکار های کاربردی برای موفقیت کسب و کار شما</h2>
+                            <div class="divider--line">
+                                <i class="divider divider--1"></i>
+                                <i class="divider divider--2"></i>
+                                <i class="divider divider--3"></i>
+                                <i class="divider divider--4"></i>
+                            </div>
+                            <p class="heading--desc">کلینیک دکتر کامران صحت با نظارت مستقیم ایشان خدمات مربوط به مشاوره به کسب و کارها در حوزه های فروش، منابع انسانی، دیجیتال مارکتینگ و حقوقی را انجام میدهد.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="number-panel">
+                            <div class="number--img">
+                                <img src="/assets/images/banners/4.jpg" alt="image">
+                            </div>
+                            <div class="number--content">
+                                <h3><span>01.</span> برگزاری دوره های آموزشی</h3>
+                                <p>دکتر کامران صحت با برگزاری دوره های متعدد در حوزه های فروش، مدیریت، منابع انسانی، انگیزشی همواره دوره های آموزشی کارگاهی و بلند مدت را در همه شهر های ایران برگزار می کنند که از طریق این وب سایت می توانید از زمان بندی دوره ها مطلع شوید.  </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="number-panel">
+                            <div class="number--img">
+                                <img src="/assets/images/banners/5.jpg" alt="image">
+                            </div>
+                            <div class="number--content">
+                                <h3><span>02.</span> برگزاری جلسات مشاوره</h3>
+                                <p>دکتر کامران صحت با تجربه مشاوره به برندهای بزرگ ایرانی و خارجی، جلسات مشاوره خود را به صورت حضوری، آنلاین و تلفنی برگزار می کنند. برای دریافت وقت مشاوره به صفحه درخواست مشاوره سایت مراجعه کنید و درخواست خود را ثبت نمایید. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="number-panel">
+                            <div class="number--img">
+                                <img src="/assets/images/banners/6.jpg" alt="image">
+                            </div>
+                            <div class="number--content">
+                                <h3><span>03.</span> ارائه راهکارهای سازمانی</h3>
+                                <p>کلینیک دکتر کامران صحت علاوه بر ارائه مشاوره در زمینه های مختلف و کمک به کسب و کارها، در زمینه پیاده سازی و اجرا راهکار ها نیز خدماتی را در حوزه های مختلف به مشتریان خود ارائه می دهد. جهت مطلع شدن از خدمات کلینیک دکتر کامران صحت با ما در تماس باشید. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="banner2" class="banner banner-2 skills skills-2 pt-0 pb-0">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 pr-0 pl-0">
+                        <div class="col-img  bg-overlay bg-overlay-theme">
+                            <div class="bg-section">
+                                <img src="/assets/images/banners/2.jpg" alt="کامران صحت" />
+                            </div>
+                            <div class="row mb-50 pt-100">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="feature-panel">
+                                        <div class="feature--icon">
+                                            <i class="lnr lnr-camera-video"></i>
+                                        </div>
+                                        <div class="feature--content">
+                                            <a href="/product/video">  <h3>ویدیو های آموزشی</h3></a>
+                                            <p>در وب سایت دکتر صحت می توانید محصولات آموزشی را در قالب ویدیو و فایل های آموزشی با فرمت های مختلف خریداری کرده و بعد از انجام خرید، دانلود نمایید.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="feature-panel">
+                                        <div class="feature--icon">
+                                            <i class="lnr lnr-bullhorn"></i>
+                                        </div>
+                                        <div class="feature--content">
+                                            <a href="/radio"> <h3>رادیو</h3></a>
+                                            <p>در وب سایت دکتر صحت می توانید به رادیو دکتر کامران صحت به صورت رایگان دسترسی داشته باشید و فایل های آموزشی صوتی را به صورت رایگان دریافت کنید.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-50">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="feature-panel">
+                                        <div class="feature--icon">
+                                            <i class="lnr lnr-book"></i>
+                                        </div>
+                                        <div class="feature--content">
+                                            <a href="/book"><h3>کتاب</h3></a>
+                                            <p>در وب سایت دکتر کامران صحت می توانید کتاب های تالیفی ایشان را به صورت رایگان و در قالب فایل pdf دانلود کنید و از آموزش های دکتر صحت بهره ببرید.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="feature-panel">
+                                        <div class="feature--icon">
+                                            <i class="lnr lnr-rocket"></i>
+                                        </div>
+                                        <div class="feature--content">
+                                            <a href="/consult-request">  <h3>درخواست مشاوره</h3></a>
+                                            <p>دکتر کامران صحت مشاور بیش از 300 برند مطرح ایرانی می باشند. شما هم از طریق وب سایت ایشان می توانید درخواست خود را برای شروع جلسات مشاوره با ایشان بگذارید.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-content pl-100">
+                        <div class="heading heading-8 mb-50">
+                            <h2 class="heading--title">با انتخاب مشاور خوب، هزینه<br>اشتباهاتتان را کاهش دهید</h2>
+                            <p class="heading--desc mb-20">خدمات ما در کلینیک کامران صحت فقط به مشاوره خلاصه نخواهد شد. ما در این کلینیک علاوه بر ارائه راهکارهایی جهت موفقیت شما در کسب و کار، شما را در پیاده سازی آن راهکارها نیاز یاری خواهیم کرد.</p>
+                            <div class="divider--line">
+                                <i class="divider divider--1"></i>
+                                <i class="divider divider--2"></i>
+                                <i class="divider divider--3"></i>
+                                <i class="divider divider--4"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <video width="100%" controls poster="/images/poster.jpg">
+                                <source src="/uploads/kamransehat.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio portfolio-grid portfolio-3col pb-80 bg-white">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <div class="heading heading-2 text--center mb-30">
+                            <p class="heading--subtitle">کسب و کار خودت رو بساز</p>
+                            <h2 class="heading--title">برترین ویدیو های آموزشی</h2>
+                            <div class="divider--line">
+                                <i class="divider divider--1"></i>
+                                <i class="divider divider--2"></i>
+                                <i class="divider divider--3"></i>
+                                <i class="divider divider--4"></i>
+                            </div>
+                            <p class="heading--desc">
+                                با خرید محصولات آموزشی کلینیک صحت، همواره آموزش های کاربردی حوزه های کسب و کار را در دسترس خود دارید. ویدیو های آموزش دکتر صحت را به صورت آنلاین خریداری نمایید و بلافاصله پس از خرید آن ها دانلود کرده و مشاهده کنید.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 portfolio-filter">
+                    </div>
+                </div>
+                <div id="portfolio-all">
+                    @foreach (var product in Model.Products)
+                    {
+                        <div class="col-xs-12 col-sm-6 col-md-4  portfolio-item">
+                            <div class="portfolio--img">
+                                <img src="@product.ImageUrl" alt="Portfolio Item" width="400">
+                                <div class="portfolio--hover">
+                                    <div class="portfolio--action">
+                                        <div class="pos-vertical-center">
+                                            <div class="portfolio--title">
+                                                <h4><a href="/product/@product.ProductGroup.UrlParam/@product.Code">@product.Title</a></h4>
+                                            </div>
+                                            <div class="portfolio--cat">
+                                                <a href="/product/@product.ProductGroup.UrlParam">@product.ProductGroup.Title</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-title">
+                            <a href="/product/@product.ProductGroup.UrlParam/@product.Code">@product.Title</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="row text-center">
+                    <a href="/product/video" class="btn btn--primary">مشاهده سایر ویدیوها</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="counter3" class="counter counter-dark bg-overlay bg-overlay-dark2">
+            <div class="bg-section">
+                <img src="/assets/images/counter/counter-2.jpg" alt="Background" />
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="count-box text-center">
+                            <div class="count-icon">
+                                <i class="lnr lnr-coffee-cup"></i>
+                            </div>
+                            <div class="counting">1,538</div>
+                            <div class="count-title">فنجان چای</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="count-box text-center">
+                            <div class="count-icon">
+                                <i class="lnr lnr-users"></i>
+                            </div>
+                            <div class="counting">2,124</div>
+                            <div class="count-title">مشتری خوشحال</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="count-box text-center">
+                            <div class="count-icon">
+                                <i class="lnr lnr-briefcase"></i>
+                            </div>
+                            <div class="counting">3,128</div>
+                            <div class="count-title">پروژه موفق</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="count-box text-center">
+                            <div class="count-icon">
+                                <i class="lnr lnr-keyboard"></i>
+                            </div>
+                            <div class="counting">2,534</div>
+                            <div class="count-title">دوره آموزشی</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+					<section id="team1" class="team team-1 bg-white">
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12">
+									<div class="heading heading-2 text-center mb-40">
+										<p class="heading--subtitle">خلاق و با استعداد</p>
+										<h2 class="heading--title">تیم آکادمی دکتر صحت</h2>
+										<div class="divider--line">
+											<i class="divider divider--1"></i>
+											<i class="divider divider--2"></i>
+											<i class="divider divider--3"></i>
+											<i class="divider divider--4"></i>
+										</div>
+										<p class="heading--desc">ما به کاری که انجام می دهیم عشق می ورزیم و با اشتیاق آن را انجام می دهیم.
+										<br>تیمی با انگیزه و باهوش، پروژه ها را انجام می دهند.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+							@foreach (var member in Model.TeamMembers)
+							{
+								<div class="col-xs-12 col-sm-3 col-md-3">
+									<div class="member">
+										<div class="member-img">
+											<img src="@member.ImageUrl" alt="@member.FullName"/>
+											<div class="member-overlay">
+												<div class="member-social">
+													<div class=" pos-vertical-center">
+														@if (member.InstagramUrl != null)
+														{
+															<a href="@member.InstagramUrl"><i class="fa fa-instagram"></i></a>
+														}
+														@if (member.LinkedinUrl != null)
+														{
+															<a href="@member.LinkedinUrl"><i class="fa fa-linkedin"></i></a>
+														}
+													</div>
+												</div>
+												</div>
+												</div>
+										<div class="member-info">
+											<h5>@member.FullName</h5>
+											<h6>@member.Post</h6>
+								</div>
+								</div>
+								</div>
+							}
+							</div>
+						</div>
+					</section>
+        <section id="blog" class="blog blog-carousel">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <div class="heading heading-2 text--center mb-60">
+                            <p class="heading--subtitle">اخبار و مقالات</p>
+                            <h2 class="heading--title">آخرین مطالب وبلاگ</h2>
+                            <div class="divider--line">
+                                <i class="divider divider--1"></i>
+                                <i class="divider divider--2"></i>
+                                <i class="divider divider--3"></i>
+                                <i class="divider divider--4"></i>
+                            </div>
+                            <p class="heading--desc">آخرین مقالات و اخبار کلینیک دکتر صحت را از سایت ما دنبال نمایید.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="carousel carousel-dots" data-slide="3" data-slide-res="2" data-autoplay="true" data-nav="false" data-dots="true" data-space="30" data-loop="true" data-speed="800">
+                        @foreach (var blog in Model.Blogs)
+                        {
+                            <div class="blog-entry blog-detail">
+                                <div class="entry--img">
+                                    <a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">
+                                        <img src="@blog.ImageUrl" alt="entry image" width="290" />
+                                    </a>
+                                </div>
+                                <div class="entry--meta">
+                                    <span>@blog.CreationDateStr</span>
+                                </div>
+                                <div class="entry--title">
+                                    <h2><a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">@blog.Title</a></h2>
+                                </div>
+                                <div class="entry--content">
+                                    @Html.Raw(blog.Summery)
+                                </div>
+                                <div class="entry--more">
+                                    <a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">مطالعه بیشتر</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="cta1" class="cta cta-1 bg-overlay bg-overlay-theme">
+            <div class="bg-section">
+                <img src="/assets/images/cta/cta-1.jpg" alt="Background" />
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <h3>کسب و کار رویایی خود را بسازید</h3>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 text-left">
+                        <a class="btn btn--white btn--bordered" href="/questions/create">شروع مشاوره</a>
+                    </div>
+                </div>
+            </div> 
+        </section> 
+        @Html.Partial("FrontEnd/_FooterPartial")
+    </div>
+
+    <script src="/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/functions.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="/assets/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="/assets/js/rsconfig.js"></script>
+</body>
+</html>

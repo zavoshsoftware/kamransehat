@@ -1,0 +1,65 @@
+﻿@model ViewModels.ProductListViewModel
+@{
+    ViewBag.Title = "ویدیو های آموزشی";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title page-title2">
+    <div class="container-fluid bg-overlay bg-overlay-dark">
+        <div class="bg-section">
+            <img src="/assets/images/page-title/title-22.jpg" alt="کامران صحت" />
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title title-8 text-center">
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            <li><a href="/">خانه</a></li>
+                            <li class="active">ویدیو های آموزشی</li>
+                        </ol>
+                        <div class="title--heading">
+                            <h1>ویدیو های آموزشی</h1>
+                        </div>
+                        <div class="title--desc">
+                            <p>در این بخش از وب سایت می توانید تمامی ویدیوهای آموزشی دکتر کامران صحت را مشاهده و خریداری نمایید.</p>
+                        </div>
+                    </div>
+                </div><!-- .page-title end -->
+            </div><!-- .col-md-12 end -->
+        </div><!-- .row end -->
+    </div><!-- .container end -->
+</section><!-- #page-title end -->
+<!-- Shop #3 With Right Sidebar
+============================================= -->
+<section id="shop" class="shop shop-3 bg-white">
+    <div class="container">
+        <div class="row">
+
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-3 product-item">
+                    <div class="product--img">
+                        <a href="/product/@product.ProductGroup.UrlParam/@product.Code">
+                            <img src="@product.ImageUrl" alt="@product.Title" />
+                        </a>
+                    </div>
+                    <div class="product--content">
+                        <div class="product--cat">
+                        </div>
+                        <div class="product--title">
+                            <h3><a href="/product/@product.ProductGroup.UrlParam/@product.Code">@product.Title</a></h3>
+                        </div>
+                        <div class="product--price">
+                            <span>@product.AmountStr</span>
+                        </div>
+                        <div class="product-add-to-basket">
+                            <a href="/addtobasket/@product.Code" class="btn btn--primary btn--bordered btn--rounded btn--block">افزودن به سبد خرید</a>
+                        </div>
+                </div>
+            </div>
+            }
+
+        </div>
+
+    </div>
+</section>

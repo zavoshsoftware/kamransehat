@@ -1,0 +1,109 @@
+﻿@model ViewModels.ConsultationDetailViewModel
+@{
+    ViewBag.Title = "درخواست مشاوره";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+<section id="page-title" class="page-title">
+    <div class="bg-section">
+        <img src="/assets/images/page-title/title-22.jpg" alt="Background" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title title-2 text-center">
+
+                    <div class="clearfix"></div>
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            <li><a href="/">خانه</a></li>
+                            <li class="active">درخواست مشاوره</li>
+                        </ol>
+                        <div class="title--heading">
+                            <h1>درخواست مشاوره</h1>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="portfolio portfolio-single bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+                <div class="entry-widget entry-add-comment mb-0 clearfix">
+                    <div class="entry-widget-title">
+                        <h4>درخواست مشاوره</h4>
+                        <div class="divider--line">
+                            <i class="divider divider--1"></i>
+                            <i class="divider divider--2"></i>
+                            <i class="divider divider--3"></i>
+                            <i class="divider divider--4"></i>
+                        </div>
+                    </div>
+                    @if(TempData["success"].ToString()=="true")
+                    {
+                        <div class="alert alert-success">درخواست شما با موفقیت ثبت شد</div>
+                    }
+                    <div class="entry-widget-content">
+                        @using (Html.BeginForm("Details", "Consultations", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            <div id="post-comment" class="mb-0">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-6 form-input">
+                                        
+                                        @Html.TextBoxFor(model => model.Consultation.Fullname, new { @class = "form-control", @placeholder = Resources.Models.Consultation.Fullname })
+                                        @Html.ValidationMessageFor(model => model.Consultation.Fullname)
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 form-input">
+                                        @Html.TextBoxFor(model => model.Consultation.Organization, new { @class = "form-control", @placeholder = Resources.Models.Consultation.Organization })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 form-input">
+                                        @Html.TextBoxFor(model => model.Consultation.Position, new { @class = "form-control", @placeholder = Resources.Models.Consultation.Position })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 form-input">
+                                        @Html.TextBoxFor(model => model.Consultation.Front, new { @class = "form-control", @placeholder = Resources.Models.Consultation.Front })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 form-input">
+                                        
+                                        @Html.TextBoxFor(model => model.Consultation.CellNumber, new { @class = "form-control", @placeholder = Resources.Models.Consultation.CellNumber })
+                                        @Html.ValidationMessageFor(model => model.Consultation.CellNumber)
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 form-input">
+                                       
+                                        @Html.TextBoxFor(model => model.Consultation.Email, new { @class = "form-control", @placeholder = Resources.Models.Consultation.Email })
+                                        @Html.ValidationMessageFor(model => model.Consultation.Email)
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-4 form-input">
+                                        @Html.DropDownListFor(m=>m.Consultation.DayOfWeek, ViewBag.Consultation_DayOfWeek as SelectList, new { @class = "form-control" })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-4 form-input">
+                                        @Html.DropDownListFor(m => m.Consultation.Time, ViewBag.Consultation_Time as SelectList, new { @class = "form-control" })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-4 form-input">
+                                        @Html.DropDownListFor(m => m.Consultation.Type, ViewBag.Consultation_Type as SelectList, new { @class = "form-control" })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 form-input">
+                                        @Html.TextBoxFor(model => model.Consultation.Website, new { @class = "form-control", @placeholder = Resources.Models.Consultation.Website })
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        @Html.TextAreaFor(model => model.Consultation.Body, new { @class = "form-control", @placeholder = Resources.Models.Consultation.Body })
+                                        @*<textarea class="form-control" id="comment" rows="2" placeholder="Comment"></textarea>*@
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <input type="submit" value="ارسال درخواست" class="btn btn--primary btn--block" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

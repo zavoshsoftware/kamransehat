@@ -1,0 +1,135 @@
+﻿@model ViewModels.BlogDetailViewModel
+
+@{
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+    ViewBag.ogImage = "https://kamransehat.ir" + Model.Blog.ImageUrl;
+    ViewBag.ogType = "article";
+    ViewBag.ogSitename = "وب سایت شخصی دکتر صحت";
+}
+
+<section id="page-title" class="page-title page-title2">
+    <div class="bg-section">
+        <img src="/assets/images/page-title/banner-2.jpg" alt="دکتر کامران صحت" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+                <div class="title title-2 text-center">
+                    <div class="clearfix"></div>
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            <li><a href="/">خانه</a></li>
+                            <li><a href="/blog/all">وبلاگ</a></li>
+                            <li class="active">@Model.Blog.Title</li>
+                        </ol>
+                        <div class="title--heading">
+                            <label>@Model.Blog.Title</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog" class="blog blog-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9">
+                <div class="blog-entry">
+                    <div class="entry--img"><img src="@Model.Blog.ImageUrl" alt="@Model.Blog.Title" /></div>
+                    <div class="entry--meta">
+                        <span>@Model.Blog.CreationDateStr</span> / <span> @Model.Blog.Visit بازدید </span> /
+                        <span><a href="/blog/@Model.Blog.BlogGroup.UrlParam">@Model.Blog.BlogGroup.Title</a></span>
+                    </div>
+                    <div class="entry--title"><h1>@Model.Blog.Title</h1></div>
+                    <div class="entry--content">@Html.Raw(Model.Blog.Body)</div>
+                </div>
+
+                <div class="entry-widget entry-related clearfix">
+                    <div class="entry-widget-title">
+                        <h4>مطالب مرتبط</h4>
+                        <div class="divider--line">
+                            <i class="divider divider--1"></i>
+                            <i class="divider divider--2"></i>
+                            <i class="divider divider--3"></i>
+                            <i class="divider divider--4"></i>
+                        </div>
+                    </div>
+                    <div class="entry-widget-content">
+                        <div class="row">
+
+                            @foreach (var relatedBlog in Model.RelatedBlogs)
+                            {
+                                <div class="col-xs-12 col-sm-4 col-md-4 entry">
+                                    <div class="entry--img">
+                                        <a href="/blog/@relatedBlog.BlogGroup.UrlParam/@relatedBlog.UrlParam">
+                                            <img src="@relatedBlog.ImageUrl" alt="@relatedBlog.Title" />
+                                        </a>
+                                    </div>
+                                    <div class="entry--title">
+                                        <h5><a href="/blog/@relatedBlog.BlogGroup.UrlParam/@relatedBlog.UrlParam">@relatedBlog.Title</a></h5>
+                                    </div>
+                                    <div class="entry--meta">
+                                        <span>@relatedBlog.CreationDateStr</span>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="widget widget-categories">
+                    <div class="widget--title">
+                        <h5>گروه مطالب</h5>
+                    </div>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <div class="widget--content">
+                        <ul class="list-unstyled">
+                            @foreach (var blogGroup in Model.BlogGroups)
+                            {
+                                <li>
+                                    <a href="/blog/@blogGroup.UrlParam">@blogGroup.Title@*<span>(20)</span>*@</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>  
+              
+                <div class="widget widget-recent-posts">
+                    <div class="widget--title">
+                        <h5>آخرین مطالب وبلاگ</h5>
+                    </div>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <div class="widget--content">
+                        @foreach (var recentBlog in Model.RecentBlogs)
+                        {
+                            <div class="entry">
+                                <img src="@recentBlog.ImageUrl" alt="@recentBlog.Title"/>
+                                <div class="entry-desc">
+                                    <div class="entry-title">
+                                        <a href="/blog/@recentBlog.BlogGroup.UrlParam/@recentBlog.UrlParam">@recentBlog.Title</a>
+                                    </div>
+                                    <div class="entry-meta">
+                                       @recentBlog.CreationDateStr 
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 

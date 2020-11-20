@@ -1,0 +1,88 @@
+﻿@model ViewModels.BaseViewModel
+<footer id="footer" class="footer footer-1">
+    <div class="footer-widget">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 footer--widget-about">
+                    <div class="footer--widget-title">
+                        <h5>درباره من</h5>
+                    </div>
+                    <div class="footer--widget-content">
+                        <p>دکتر کامران صحت دارای مدرک DBA گرایش بازاریابی از دانشگاه لندن انگلستان  مدرس و مشاور برترین برندهای داخلی و بین المللی</p>
+                        <ul class="list-unstyled mb-0">
+                            <li><span>تلفن:</span> 00989121008545</li>
+                            <li><span>ایمیل:</span> info@kamransehat.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 footer--widget-recent">
+                    <div class="footer--widget-title">
+                        <h5>آخرین مطالب وبلاگ</h5>
+                    </div>
+                    <div class="footer--widget-content">
+                        @foreach (var blog in Model.FooterRecentBlog)
+                        {
+                            <div class="entry">
+                                <div class="entry--meta">@blog.CreationDateStr</div>
+                                <div class="entry--title">
+                                    <a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">@blog.Title</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 footer--widget-newsletter">
+                    <div class="footer--widget-title">
+                        <h5>به روز باشید</h5>
+                    </div>
+                    <div class="footer--widget-content">
+                        <p>با ثبت نام در خبرنامه ما، از آخرین مطالب وبلاگ با خبر شوید.</p>
+                        <form class="form-newsletter">
+                            <input type="email" name="email" class="form-control" placeholder="ثبت نام در خبر نامه">
+                            <button type="submit"><i class="fa fa-long-arrow-left"></i></button>
+                        </form>
+                        <div class="clearfix"></div>
+                        <div class="social">
+                            <a title="توییتر دکتر کامران صحت" class="share-twitter" href="https://twitter.com/drkamransehat"><i class="fa fa-twitter"></i></a>
+                            <a title="لینکدین دکتر کامران صحت" class="share-linkedin" href="https://www.linkedin.com/in/dr-kamran-sehat-4a610a78/"><i class="fa fa-linkedin"></i></a>
+                            <a title="تلگرام دکتر کامران صحت" href="https://t.me/drkamransehat"><i class="fa fa-telegram"></i></a>
+                            <a title="اینستاگرام دکتر کامران صحت" class="share-instagram" href="https://www.instagram.com/kamransehat/"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 widget-instagram">
+                    <div class="footer--widget-title">
+                        <h5>Instagram</h5>
+                    </div>
+                    @*<div class="footer--widget-content">
+                            <div id="instafeed" class="instafeed"></div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer--bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-5 col-md-6">
+                    <div class="footer--copyright">
+                        <span>&copy; 2017 طراحی و توسعه سایت توسط</span> <a href="https://zavoshsoftware.com/page/%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%88%D8%A8-%D8%B3%D8%A7%DB%8C%D8%AA">زاوش</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-7 col-md-6">
+                    <div class="footer--links pull-right pull-none-xs">
+                        <ul class="list-inline mb-0">
+                            <li><a href="/blog/all">وبلاگ</a></li>
+                            <li><a href="/product/video">ویدیو های آموزشی</a></li>
+                            <li><a href="/radio">رادیو</a></li>
+                            <li><a href="/book">کتاب ها</a></li>
+                            <li><a href="/contact">تماس با ما</a></li>
+                            <li><a href="/about">درباره ما</a></li>
+                            <li><a href="/account/login">ورود</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

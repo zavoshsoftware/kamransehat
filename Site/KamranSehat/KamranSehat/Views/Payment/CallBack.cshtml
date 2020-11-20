@@ -1,0 +1,138 @@
+﻿@model ViewModels.CallBackViewModel
+@{
+    ViewBag.Title = "پرداخت";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+
+
+ 
+
+<section id="page-title" class="page-title page-title2">
+    <div class="bg-section">
+        <img src="/assets/images/page-title/banner-2.jpg" alt="دکتر کامران صحت" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+                <div class="title title-2 text-center">
+                    <div class="clearfix"></div>
+                    <div class="title--content">
+                        <div class="title--heading">
+                            <h1>پرداخت</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="portfolio" class="portfolio portfolio-single bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="cart-table table-responsive">
+                    @if (Model.IsSuccess)
+                    {
+                    <div class="cart-product-action">
+                        <div class="cart-shiping">
+                            <div class="row clearfix">
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    <div class="form-inline">
+                                        <span>شماره پیگیری : </span>
+                                        <span>@Model.RefrenceId</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    <div class="form-inline">
+                                        <span>شماره فاکتور : </span>
+                                        <span>@Model.OrderCode</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    <div class="form-inline">
+                                        <span>تاریخ  : </span>
+                                        <span>@Model.CreationDate</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    if (Model.ProductType == "video")
+                    {
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr class="cart-product">
+                                <th class="cart-product-item">عنوان محصول</th>
+                                <th class="cart-product-price">مشاهده</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var product in Model.Products)
+                            {
+                            <tr class="cart-product">
+                                <td class="cart-product-item">
+
+                                    <div class="cart-product-img">
+                                        <img src="@product.ImageUrl" alt="@product.Title" />
+                                    </div>
+                                    <div class="cart-product-name">
+                                        <h6>@product.Title</h6>
+                                    </div>
+                                </td>
+                                <td class="cart-product-price"><a href="/ShowProduct/@product.Code/@Model.OrderCode">مشاهده</a></td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                    }
+                    else if (Model.ProductType ==System.Web.Configuration.WebConfigurationManager.AppSettings["online-consult"])
+                    {
+                            <div class="col-md-8 col-md-offset-2">
+                                <p class="alert-success">
+                                    پاسخ به سوال شما تا 24 ساعت آینده آماده خواهد شد و برای شما ارسال می گردد.
+                                </p>
+                            </div>
+                    }
+                    else if (Model.ProductType ==System.Web.Configuration.WebConfigurationManager.AppSettings["online-consult"])
+                    {
+	                    <div class="col-md-8 col-md-offset-2">
+		                    <p class="alert-success">
+			                    پاسخ به سوال شما تا 24 ساعت آینده آماده خواهد شد و برای شما ارسال می گردد.
+		                    </p>
+	                    </div>
+                    }
+                    }
+                    else
+                    {
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-md-push-3">
+                        <div class="cart-shiping">
+                            <p class="heading-color mb--30 text-center alert alert-danger">
+                                خطا در انجام عملیات پرداخت
+                            </p>
+                            <div class="panel-body text-right">
+                                <p>
+                                    کاربر گرامی در صورتی که مبلغ سفارش از حساب شما کسر شده است، حداکثر ظرف مدت 72 ساعت به حساب شما باز خواهد گشت. در صورت مشکل با شماره تلفن پشتیبانی تماس بگیرید.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+                <!-- .cart-table end -->
+            </div>
+
+        </div>
+    </div>
+</section>
+

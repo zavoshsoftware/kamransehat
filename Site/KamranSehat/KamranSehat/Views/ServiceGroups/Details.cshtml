@@ -1,0 +1,72 @@
+﻿@model ViewModels.ServiceGroupDetailViewModel
+
+@{
+    ViewBag.Title = Model.ServiceGroup.Title;
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title bg-overlay bg-overlay-dark">
+    <div class="bg-section">
+        <img src="/assets/images/page-title/title-22.jpg" alt="Background" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                <div class="title title-2 text-center">
+                    <div class="title--content">
+                        <ol class="breadcrumb">
+                            <li><a href="/">خانه</a></li>
+                            <li>خدمات</li>
+                            <li class="active">@Model.ServiceGroup.Title</li>
+                        </ol>
+                        <div class="title--heading">
+                            <h1>@Model.ServiceGroup.Title</h1>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="portfolio" class="portfolio portfolio-single bg-white">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="portfolio--title">
+                    <h1>@Model.ServiceGroup.Title</h1>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                </div>
+                <div class="portfolio--content">
+                    @Html.Raw(Model.ServiceGroup.Body)
+                    
+                    <ul class="list icon-list">
+                        @foreach (var service in Model.Services)
+                        {
+                            <li><i class="fa fa-caret-left"></i><a href="/service/@Model.ServiceGroup.Name/@service.Name">@service.Title</a></li>
+
+                        }
+                     
+                    </ul>
+                </div> 
+
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="portfolio--img">
+
+                    <img src="@Model.ServiceGroup.ImageUrl" width="100%" />
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
