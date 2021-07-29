@@ -53,7 +53,7 @@ jQuery(document).ready(function() {
         },
 		 responsiveLevels: [1240, 1024, 778, 480],
 		gridwidth:[1240, 1024, 778, 320],
-        gridheight: [700, 768, 600, 620],
+        gridheight: [700, 768, 300, 280],
 
     });
 });
